@@ -20,6 +20,11 @@ public final class Util {
 
     static {
         loadProperti();
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     private static void loadProperti() {
