@@ -1,5 +1,8 @@
 package jm.task.core.jdbc.util;
 
+import jm.task.core.jdbc.model.User;
+import org.hibernate.cfg.Configuration;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
@@ -25,6 +28,11 @@ public final class Util {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public static Configuration hibernateConfiguration(){
+        Configuration configuration = new Configuration().addAnnotatedClass(User.class);
+        return configuration;
     }
 
     private static void loadProperti() {
